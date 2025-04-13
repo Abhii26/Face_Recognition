@@ -1,22 +1,79 @@
-
   <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #1a1a2e;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .project-title {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #fff;
+      font-size: 3.5rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+      z-index: 10;
+    }
+
     #container{
       display: flex;
       justify-content: center; 
-      padding-top: 80px;
+      padding-top: 150px;
     }
-
     #canvas{
       position: absolute;
     }
-    
   </style>
+</head>
+<body>
+  <!-- Interactive Particle Background -->
+  <div id="particles-js"></div>
+  
+  <!-- Project Name Heading -->
+  <h1 class="project-title">Facialytics</h1>
+
+  <!-- Your existing HTML (keep it as is) -->
   <canvas id="canvas"></canvas>
   <div id="container">
-
-      <video id="videoId" width="720" height="580" autoplay></video>
-
-
+    <video id="videoId" width="720" height="580" autoplay></video>
   </div>
+
+  <!-- Load particles.js (for interactive background) -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Initialize particles.js
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#0ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: "#0ff", opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        }
+      }
+    });
+  </script>
+
+  <!-- Your existing scripts (keep them as is) -->
   <script src="./face-api.min.js"></script>
   <script src="./scripts.js"></script>
+</body>
