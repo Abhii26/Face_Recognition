@@ -131,9 +131,9 @@ Draws bounding boxes, landmarks, and labels on the canvas
 
 
 📚 References
-📘 face-api.js GitHub Documentation([text](https://github.com/justadudewhohacks/face-api.js))
+📘 face-api.js GitHub Documentation(https://github.com/justadudewhohacks/face-api.js)
 
-🔐 mkcert – GitHub([text](https://github.com/FiloSottile/mkcert))
+🔐 mkcert – GitHub(https://github.com/FiloSottile/mkcert)
 
 
 
